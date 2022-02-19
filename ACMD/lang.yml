@@ -1,0 +1,47 @@
+###############################
+# Custom plugin message here  #
+###############################
+
+# Avaliable placehoders :
+#
+#   %acmdName  (the name te ACMD)
+#   %acmdCycleTick  (cycle)
+#   %acmdCycleSec (cycle in seconds)
+#   %acmdDelayTick (Delay in tick)
+#   %acmdDelaySec (Delay in seconds)
+#   %acmdMessage
+#   %acmdCommand
+#   %acmdFound  (number of command found in the config)
+#   %acmdRepetition (Number of repetition of the command before disable, -1 = no limit )
+#   %acmdRepCounter (actual number of time the command has executed)
+#   %acmdIsActive (command active or not)
+#   %acmdID (id in the commands.yml)
+
+
+# Enable and disable the ACMD
+onEnablAcmd: '&6%acmdName &aenable'
+onDisableAcmd: '&6%acmdName &c&ldisable'
+
+#Time warning
+AlertShortCycle: '&c%acmdName has a cycle of %acmdCycleSec seconds, this is short and it can cause lag on your server'
+
+# On new command
+onAddingANewCommand : 'command %acmdName succesfully added'
+
+CommandListTop: '--Running acmds : %acmdFound--'
+CommandListBottom: ' '
+
+OnReload: 'reloaded %acmdFound acmds'
+
+OnRepetitionEnd: '&cstopping executing %acmdName'
+
+ConsoleExecutingMessage: '&6 %acmdName Executing fot the %acmdRepCounter the  command&a->&6 %acmdCommand'
+
+onDysplayingAcmd:
+ '0': '&6>acmd : %acmdName '
+ '1': '   &dID : %acmdID &e, Active : %acmdIsActive'
+ '2': '   &eevery : %acmdCycleSec seconds&e,&9 delay : %acmdDelaySec'
+ '3': '   &eExecuting -> &6%acmdCommand'
+ '4': '   &eRepeting task &8%acmdRepetition&e times'
+ '5': '   &edisplaying message : %acmdMessage'
+ '6': '&e- - - - - - - - - - - - - - - - - - -'
