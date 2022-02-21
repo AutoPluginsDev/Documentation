@@ -17,7 +17,7 @@ example2:
 
 # This command will run every 200 ticks(10 seconds) with 0 delay between the activation.
 # you will have the same result executing this command on your minecraft server :
-# /acmd new myAcmdTest 200 0 say Hello world
+# /acmd new myAcmdTest 200 0 2 say Hello world
 
 # example1:
 #  active: false # if true, the command will be executed by the server
