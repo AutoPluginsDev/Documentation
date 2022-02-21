@@ -16,6 +16,9 @@
 #   %acmdRepCounter (actual number of time the command has executed)
 #   %acmdIsActive (command active or not)
 #   %acmdID (id in the commands.yml)
+#   %acmdRunning (number of running command)
+#   %acmdDaylyTime (hour and minuts with format "hh H mm" when the command will be executed everyday)
+
 
 
 # Enable and disable the ACMD
@@ -25,11 +28,12 @@ onDisableAcmd: '&6%acmdName &c&ldisable'
 #Time warning
 AlertShortCycle: '&c%acmdName has a cycle of %acmdCycleSec seconds, this is short and it can cause lag on your server'
 
-# On new command
-onAddingANewCommand : 'command %acmdName succesfully added'
+onAddingANewCommand : 'command %acmdName successfully added'
 
-CommandListTop: '--Running acmds : %acmdFound--'
-CommandListBottom: ' '
+onDeleteAcmd: 'Command %acmdName successfully deleted'
+
+CommandListTop: '---------[&6%acmdRunning running out of %acmdFound found]&e---------'
+CommandListBottom: ''
 
 OnReload: 'reloaded %acmdFound acmds'
 
@@ -37,11 +41,16 @@ OnRepetitionEnd: '&cstopping executing %acmdName'
 
 ConsoleExecutingMessage: '&6 %acmdName Executing fot the %acmdRepCounter the  command&a->&6 %acmdCommand'
 
+CommandEdited: '&6command successfully modified'
+
 onDysplayingAcmd:
- '0': '&6>acmd : %acmdName '
- '1': '   &dID : %acmdID &e, Active : %acmdIsActive'
- '2': '   &eevery : %acmdCycleSec seconds&e,&9 delay : %acmdDelaySec'
- '3': '   &eExecuting -> &6%acmdCommand'
- '4': '   &eRepeting task &8%acmdRepetition&e times'
- '5': '   &edisplaying message : %acmdMessage'
- '6': '&e- - - - - - - - - - - - - - - - - - -'
+ - '   &eName : &6%acmdName '
+ - '   &eID : &d%acmdID &e, Active : %acmdIsActive'
+ - '   &eEvery : %acmdCycleSec seconds&e, delay : &9%acmdDelaySec'
+ - '   &eDaly execution hour : &a&l%acmdDaylyTime'
+ - '   &6List of the commands : '
+ - '   &6%acmdCommand'
+ - ' '
+ - '   &eRepeating task &8%acmdRepetition&e times'
+ - '   &edisplaying message : %acmdMessage'
+ - '&e--------------------------------------------------'
