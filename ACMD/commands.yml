@@ -1,25 +1,26 @@
-# ######################
+#######################
 # EDIT YOUR ACMD HERE #
-# ######################
+#######################
 
 example2:
   active: false
   TaskParameters:
     name: AcmdExample2
-    cycle: 6000
-    delay: 200
+    cycle: 6000 # 5 min
+    delay: 200 #wait 10s (20*10) before start cycle
     repetition: -1
     commands:
-    - say Dont forget to join our Discord !
-    message: ''
+      - say Dont forget to join our Discord !
+    message: '' #no message
+    running: false
   DailySchedulerParameters:
     time: ''
 
 # This command will run every 200 ticks(10 seconds) with 0 delay between the activation.
 # you will have the same result executing this command on your minecraft server :
-# /acmd new myAcmdTest 200 0 2 say Hello world
+# /acmd new myAcmdTest 200 0 say Hello world
 
-# example1:
+#example1:
 #  active: false # if true, the command will be executed by the server
 #  TaskParameters:
 #    name: AcmdExample1
@@ -30,6 +31,7 @@ example2:
 #      - say Hello World
 #      - say dlroW olleH
 #    message: '&aThis is a &6test &a! '
+#    running: false
 #  DailySchedulerParameters:
 #    time : '18H42' #if empty, the acmd will not be a dayly task.
 
