@@ -1,5 +1,5 @@
 # Support of documentation of all ours plugins !
-Dont forget to check the wiki first.
+Dont forget to check the [wiki](https://github.com/AutoPluginsDev/Documentation/wiki) first.
 If you see any error please report us on the Discord server !
 
 
